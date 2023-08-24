@@ -1,0 +1,2224 @@
+{
+	"info": {
+		"_postman_id": "ca177b0d-a351-45fa-a79e-b97fa5fefa4a",
+		"name": "Ecommerce-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Demouser@gmail.com\",\r\n    \"password\":\"Demouser@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/login",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/login",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e2-OEyCP+njSlX563jMc6VYkiI3yKA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Mar 2022 16:06:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"solankiravi533@gmail.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzg3ODgwMywiZXhwIjoxNjQ3OTY1MjAzfQ.xSCU0EnGEmXxDZ9sc7JucZkrXzmoQ5T_xIXzlyUzBcw\"\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"demoseller1@gmail.com\",\r\n    \"password\":\"demoseller1@gmail.com\",\r\n    \"name\":\"demo Seller\",\r\n    \"location\":\"SG highway\",\r\n    \"type\":\"Seller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/register",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-4ox5biSXlPqEWxQpwyaU9q/tOHY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Mar 2022 16:14:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"User registered please login!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "getusers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxMjNAZ21haWwuY29tIiwiaWQiOiJlNDAzNjFhZS1hYWI2LTQ4NGUtOGU1MC00ZDBiOTIwMGNkN2EiLCJ0eXBlIjoic2VsbGVyIiwiaWF0IjoxNjQ4Mjc1MDk2LCJleHAiOjE2NDgzNjE0OTZ9.l1mtHXGxc4JCh-bbGZ2deY_WX_UbLuE2q799T0CjuTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getusers",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getusers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getusers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/getusers",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"getusers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-IrUQ/LzGzNkneZsfD5ZXwYw6kGs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 16:07:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": [\n        {\n            \"id\": \"f0a26fe5-a729-4cde-8ff7-d96fe439d22c\",\n            \"email\": \"solankiravi533@gmail.com\",\n            \"password\": \"solankiravi533@gmail.com\"\n        },\n        {\n            \"email\": \"solankiravi534@gmail.com\",\n            \"password\": \"solankiravi534@gmail.com\",\n            \"id\": \"f0a26fe5-a729-4cde-8ff7-d96fe439d22b\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxMjNAZ21haWwuY29tIiwiaWQiOiJlNDAzNjFhZS1hYWI2LTQ4NGUtOGU1MC00ZDBiOTIwMGNkN2EiLCJ0eXBlIjoic2VsbGVyIiwiaWF0IjoxNjQ4Mjc1MDk2LCJleHAiOjE2NDgzNjE0OTZ9.l1mtHXGxc4JCh-bbGZ2deY_WX_UbLuE2q799T0CjuTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getuser?email=test123@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getuser"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "test123@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getuser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/getuser?email=solankiravi534@gmail.com",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"getuser"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "solankiravi534@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-OeApXaOv6NhBBNi7M/scz1iK32c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 16:13:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"password\": \"solankiravi534@gmail.com\",\n        \"id\": \"f0a26fe5-a729-4cde-8ff7-d96fe439d22b\",\n        \"email\": \"solankiravi534@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "adduser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzk2NTY1NSwiZXhwIjoxNjQ4MDUyMDU1fQ.O8_rayiiApCqsJz2sXD1k7UNkbPnFiV9NbHY5Bn8YmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"solankiravi534@gmail.com\",\r\n    \"password\":\"solankiravi534@gmail.com\",\r\n    \"name\":\"Ravi Solanki\",\r\n    \"location\":\"Paldi\",\r\n    \"type\":\"Seller\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/adduser",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"adduser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "adduser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"solankiravi534@gmail.com\",\r\n    \"password\":\"solankiravi534@gmail.com\",\r\n    \"name\":\"Ravi Solanki\",\r\n    \"location\":\"Paldi\",\r\n    \"type\":\"Seller\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/adduser",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"adduser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-lOMWHYwfVIzEkgd7Q0MKReQy3+8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 16:15:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"User Added Successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzk2NTY1NSwiZXhwIjoxNjQ4MDUyMDU1fQ.O8_rayiiApCqsJz2sXD1k7UNkbPnFiV9NbHY5Bn8YmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/deleteuser?email=solankiravi535@gmail.com",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"deleteuser"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "solankiravi535@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteuser",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/deleteuser?email=solankiravi535@gmail.com",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"deleteuser"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "solankiravi535@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-5WiGDHMgn4omdV/ONakqdjX3eBI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 16:35:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"No User found for given details!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW91c2VyQGdtYWlsLmNvbSIsImlkIjoiYmQ2MTIxNTctMTdhYy00MDVhLWIwYTUtMWRkY2Y2NTRjOTQzIiwidHlwZSI6Ik5vcm1hbCIsImlhdCI6MTY0ODMwMTA2MiwiZXhwIjoxNjQ4Mzg3NDYyfQ.E5kv42yyA1NcwbZrrtMp5d1J9X0-Me2f-T-g7g1nP0E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Angadyadavv91@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"type\": \"normal\",\r\n    \"name\": \"Angad yadav\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/updateuser?email=Angadyadavv91@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"updateuser"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "Angadyadavv91@gmail.com"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateuser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"solankiravi535@gmail.com\",\r\n    \"password\":\"solankiravi535@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/updateuser?email=solankiravi535@gmail.com",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"updateuser"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "solankiravi535@gmail.com"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-lOMWHYwfVIzEkgd7Q0MKReQy3+8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 16:42:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"User Added Successfully!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "getproducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0ODIyNDUzNiwiZXhwIjoxNjQ4MzEwOTM2fQ.2AaFzj_AGiRfKIzOk9fLG4I4kQy6AQPMDfU4k97sCF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getproducts",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getproducts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getproducts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getproducts",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getproducts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "10350"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"286e-qLc2fU9owWujuvslR/3gfIgjRU8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Mar 2022 06:12:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"products\": [\n        {\n            \"id\": 1,\n            \"title\": \"Headset\",\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"category\": \"electronics\",\n            \"seller\": [\n                {\n                    \"seller_email\": \"test123@gmail.com\",\n                    \"seller_name\": \"Test User\",\n                    \"seller_location\": \"Ahmedabad\",\n                    \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\",\n                    \"price\": \"500\",\n                    \"qty\": \"1\"\n                }\n            ]\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1505751104546-4b63c93054b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTcyfHxwcm9kdWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60\",\n            \"id\": 2,\n            \"category\": \"Headphones\",\n            \"title\": \"Sony headset\",\n            \"description\": \"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.\",\n            \"seller\": [\n                {\n                    \"seller_email\": \"test123@gmail.com\",\n                    \"seller_name\": \"Test User\",\n                    \"seller_location\": \"Ahmedabad\",\n                    \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\",\n                    \"price\": 400,\n                    \"qty\": 6\n                }\n            ]\n        },\n        {\n            \"title\": \"Yellow shoes\",\n            \"id\": 3,\n            \"image\": \"https://images.unsplash.com/photo-1618329340733-ab4554d28b15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=903&q=80\",\n            \"description\": \"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.\",\n            \"category\": \"Shoes\",\n            \"seller\": [\n                {\n                    \"seller_email\": \"solankiravi536@gmail.com\",\n                    \"sid\": \"0c41f66b-ca4a-4b98-8e00-8544727dbcc4\",\n                    \"price\": 500,\n                    \"qty\": 3\n                }\n            ]\n        },\n        {\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"id\": 21,\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"price\": \"125\",\n            \"title\": \"Headset\",\n            \"category\": \"electronics\",\n            \"seller\": []\n        },\n        {\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"category\": \"electronics\",\n            \"title\": \"Headset\",\n            \"price\": \"125\",\n            \"id\": 16,\n            \"seller\": []\n        },\n        {\n            \"description\": \"\\\"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\\\"\",\n            \"title\": \"\\\"Headset\\\"\",\n            \"id\": 14,\n            \"price\": \"109\",\n            \"category\": \"\\\"electronics\\\"\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"seller\": []\n        },\n        {\n            \"title\": \"Water bottle\",\n            \"price\": 22.3,\n            \"id\": 4,\n            \"image\": \"https://images.unsplash.com/photo-1616740540792-3daec604777d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"description\": \"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.\",\n            \"category\": \"men's clothing\",\n            \"seller\": []\n        },\n        {\n            \"id\": 5,\n            \"price\": 300,\n            \"qty\": 5,\n            \"description\": \"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates\",\n            \"title\": \"Pen\",\n            \"image\": \"https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=623&q=80\",\n            \"category\": \"Stationery\",\n            \"seller\": []\n        },\n        {\n            \"price\": 114,\n            \"id\": 6,\n            \"category\": \"Shoes\",\n            \"title\": \"Red shoe\",\n            \"image\": \"https://images.unsplash.com/photo-1618860202521-71e9f4bdcfaa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80\",\n            \"description\": \"Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty\",\n            \"seller\": []\n        },\n        {\n            \"price\": 9.99,\n            \"image\": \"https://images.unsplash.com/photo-1611200047983-8df87804e582?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80\",\n            \"description\": \"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...\",\n            \"title\": \"Black shoe\",\n            \"category\": \"jewelery\",\n            \"id\": 7,\n            \"seller\": []\n        },\n        {\n            \"id\": 13,\n            \"title\": \"\\\"Headset\\\"\",\n            \"price\": \"109\",\n            \"description\": \"\\\"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\\\"\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"category\": \"\\\"electronics\\\"\",\n            \"seller\": []\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80\",\n            \"category\": \"Coffee\",\n            \"price\": 29.95,\n            \"id\": 8,\n            \"title\": \"Coffee\",\n            \"description\": \"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON\",\n            \"seller\": []\n        },\n        {\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"qty\": 1,\n            \"price\": \"125\",\n            \"id\": 22,\n            \"title\": \"Headset\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"category\": \"electronics\",\n            \"seller\": []\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHByb2R1Y3R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60\",\n            \"title\": \"Cycle\",\n            \"price\": 168,\n            \"id\": 9,\n            \"description\": \"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.\",\n            \"category\": \"bycycle\",\n            \"seller\": []\n        },\n        {\n            \"description\": \"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort\",\n            \"price\": 7.95,\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"id\": 11,\n            \"title\": \"watch\",\n            \"category\": \"electronics\",\n            \"seller\": []\n        },\n        {\n            \"title\": \"Shampoo\",\n            \"category\": \"Hair care\",\n            \"description\": \"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system\",\n            \"price\": 64,\n            \"id\": 12,\n            \"image\": \"https://images.unsplash.com/photo-1620915789336-129994d5efc8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80\",\n            \"seller\": []\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0ODE5OTI3MiwiZXhwIjoxNjQ4Mjg1NjcyfQ.SydgeWYaVW4wtgy5eTxZFKqtxgNaIgp_VwW9G-W0ce0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getproduct?productid=1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getproduct"
+							],
+							"query": [
+								{
+									"key": "productid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getproduct",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getproduct?productid=1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getproduct"
+									],
+									"query": [
+										{
+											"key": "productid",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "875"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36b-aO8SnGQk13DvcPdqbGOkdRU97J4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Mar 2022 06:12:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"product\": {\n        \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n        \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n        \"category\": \"electronics\",\n        \"title\": \"Headset\",\n        \"id\": 1,\n        \"seller\": [\n            {\n                \"seller_email\": \"test123@gmail.com\",\n                \"seller_name\": \"Test User\",\n                \"seller_location\": \"Ahmedabad\",\n                \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\",\n                \"price\": \"500\",\n                \"qty\": \"1\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0ODA1NTk2MiwiZXhwIjoxNjQ4MTQyMzYyfQ.PC07eoKAID80ijoVYpCaImzXJwrlunf80P6Kp16KP7o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "electronics",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "125",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Headset",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Solan/Downloads/bouquet-of-rose-flowers-on-a-gold-and-blue-background-gift-for-mothers-day-8-march-minimal-romance-composition-with-copyspace-2F7BW2N.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/addproduct",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"addproduct"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addproduct",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "category",
+											"value": "\"electronics\"",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "\"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\"",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "109",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "\"Headset\"",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Solan/Downloads/bouquet-of-rose-flowers-on-a-gold-and-blue-background-gift-for-mothers-day-8-march-minimal-romance-composition-with-copyspace-2F7BW2N.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/addproduct",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"addproduct"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-SSVbq5PzyUPoGy8obYqwapSiuXc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 17:23:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Product Added Successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzk2NTY1NSwiZXhwIjoxNjQ4MDUyMDU1fQ.O8_rayiiApCqsJz2sXD1k7UNkbPnFiV9NbHY5Bn8YmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/deleteproduct?id=15",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"deleteproduct"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteproduct",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/deleteproduct?id=15",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"deleteproduct"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-CumgJBJQrLpxa1kEl26tF+8MHJQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 17:26:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Product Deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateproduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0Nzk2NTY1NSwiZXhwIjoxNjQ4MDUyMDU1fQ.O8_rayiiApCqsJz2sXD1k7UNkbPnFiV9NbHY5Bn8YmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"electronics\",\r\n    \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\r\n    \"id\": 15,\r\n    \"price\": 120,\r\n    \"title\": \"Headset\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/updateproduct?id=15",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"updateproduct"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateproduct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"category\": \"electronics\",\r\n    \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\r\n    \"id\": 15,\r\n    \"price\": 120,\r\n    \"title\": \"Headset\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/updateproduct?id=16",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"updateproduct"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-LZoZRFHlFQCoLepnNZ+ItsFlqUw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 18:35:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Product updated Successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateproductPriceAndQty",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0ODIyNDUzNiwiZXhwIjoxNjQ4MzEwOTM2fQ.2AaFzj_AGiRfKIzOk9fLG4I4kQy6AQPMDfU4k97sCF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 15,\r\n    \"price\": 400,\r\n    \"sid\":\"123\",\r\n    \"qty\":6\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/updateproductPriceAndQty?id=1",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"updateproductPriceAndQty"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateproductPriceAndQty",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 15,\r\n    \"price\": 400,\r\n    \"sid\":\"123\",\r\n    \"qty\":6\r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/updateproductPriceAndQty?id=1",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"updateproductPriceAndQty"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-Wxq+8Mqv2ZlfMtXi+Lj7u+cYflg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 16:45:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Price and Quantity updated!\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "getcart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW91c2VyQGdtYWlsLmNvbSIsImlkIjoiYmQ2MTIxNTctMTdhYy00MDVhLWIwYTUtMWRkY2Y2NTRjOTQzIiwidHlwZSI6Ik5vcm1hbCIsImlhdCI6MTY0ODMwMTA2MiwiZXhwIjoxNjQ4Mzg3NDYyfQ.E5kv42yyA1NcwbZrrtMp5d1J9X0-Me2f-T-g7g1nP0E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/getcart",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"getcart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getcart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getcart",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getcart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"469-699OTRmkGPVWBw0JuNr4zEQOHzI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 19:23:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"title\": \"Yellow shoes\",\n        \"image\": \"https://images.unsplash.com/photo-1618329340733-ab4554d28b15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=903&q=80\",\n        \"description\": \"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.\",\n        \"price\": 695,\n        \"category\": \"Shoes\",\n        \"qty\": 3,\n        \"cid\": \"6319b2da-c55d-40a7-8dc6-8f7900188373\",\n        \"sid\": \"0c41f66b-ca4a-4b98-8e00-8544727dbcc4\"\n    },\n    {\n        \"image\": \"https://images.unsplash.com/photo-1505751104546-4b63c93054b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTcyfHxwcm9kdWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60\",\n        \"description\": \"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.\",\n        \"title\": \"Sony headset\",\n        \"id\": 2,\n        \"category\": \"Headphones\",\n        \"price\": 12.99,\n        \"qty\": 1,\n        \"cid\": \"48c87909-8cf3-4939-bbb3-359303dd419b\",\n        \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "addtocart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTM2QGdtYWlsLmNvbSIsImlkIjoiMGM0MWY2NmItY2E0YS00Yjk4LThlMDAtODU0NDcyN2RiY2M0IiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4MjMyNDYzLCJleHAiOjE2NDgzMTg4NjN9.1P0swSIDecJ2jBNVHrnlaCPpxEZMV5oFOJ3Cgz8ZXn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"qty\":1,\r\n    \"sid\":\"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/addtocart",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"addtocart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addtocart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":2,\r\n    \"qty\":1,\r\n    \"sid\":\"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/addtocart",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"addtocart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-9e/vVzxEnAl1Eih7yjE5S8Idk7c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 19:23:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Product Added to cart\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "getordersuser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlkIjoiZjBhMjZmZTUtYTcyOS00Y2RlLThmZjctZDk2ZmU0MzlkMjJjIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4Mjc0NDgyLCJleHAiOjE2NDgzNjA4ODJ9.61MbLNN9hLfySqOxyCFf5D51luCRlhfzwmt_Yq-w9pc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getordersuser",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getordersuser"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getordersuser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getordersuser",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getordersuser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3107"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c23-4S5XYYmX1tzBOZW7WkYaUVThZ3k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Mar 2022 06:05:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orders\": [\n        {\n            \"category\": \"electronics\",\n            \"price\": 500,\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"id\": 1,\n            \"title\": \"Headset\",\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"0c860e41-cc09-4f28-97d1-7fe63d60bdb9\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"title\": \"Sony headset\",\n            \"price\": 300,\n            \"id\": 2,\n            \"description\": \"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.\",\n            \"category\": \"Headphones\",\n            \"image\": \"https://images.unsplash.com/photo-1505751104546-4b63c93054b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTcyfHxwcm9kdWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60\",\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"483f668d-6d38-41ef-9cbd-42481c22eb8b\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1616740540792-3daec604777d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"price\": 500,\n            \"title\": \"Water bottle\",\n            \"description\": \"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.\",\n            \"category\": \"men's clothing\",\n            \"id\": 4,\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"confirmed\",\n            \"oid\": \"94ee72a7-b793-4aca-b35f-8c0df18f2151\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"price\": 500,\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"title\": \"Headset\",\n            \"category\": \"electronics\",\n            \"id\": 1,\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"0d0ad169-4502-442f-bd57-e0e26c086156\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getordersserller",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTM2QGdtYWlsLmNvbSIsImlkIjoiMGM0MWY2NmItY2E0YS00Yjk4LThlMDAtODU0NDcyN2RiY2M0IiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4MjMyNDYzLCJleHAiOjE2NDgzMTg4NjN9.1P0swSIDecJ2jBNVHrnlaCPpxEZMV5oFOJ3Cgz8ZXn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getordersseller",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getordersseller"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getordersserller",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getordersseller",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getordersseller"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "619"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26b-67voT8ZsanXEh5otH++doqa5nbo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Mar 2022 06:00:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orders\": [\n        {\n            \"id\": 3,\n            \"category\": \"Shoes\",\n            \"price\": 695,\n            \"image\": \"https://images.unsplash.com/photo-1618329340733-ab4554d28b15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=903&q=80\",\n            \"description\": \"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.\",\n            \"title\": \"Yellow shoes\",\n            \"seller_email\": \"solankiravi536@gmail.com\",\n            \"qty\": \"1\",\n            \"status\": \"pending\",\n            \"oid\": \"6c37215a-a42f-4fdd-a1ec-8024f86de443\",\n            \"sid\": \"0c41f66b-ca4a-4b98-8e00-8544727dbcc4\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "placeorder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkRlbW91c2VyQGdtYWlsLmNvbSIsImlkIjoiYmQ2MTIxNTctMTdhYy00MDVhLWIwYTUtMWRkY2Y2NTRjOTQzIiwidHlwZSI6Ik5vcm1hbCIsImlhdCI6MTY0ODMwMTA2MiwiZXhwIjoxNjQ4Mzg3NDYyfQ.E5kv42yyA1NcwbZrrtMp5d1J9X0-Me2f-T-g7g1nP0E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": 1,\r\n        \"qty\": 2,\r\n        \"price\": 500,\r\n        \"sid\":\"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"qty\": 2,\r\n        \"price\": 300,\r\n        \"sid\":\"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/placeorder",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"placeorder"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "placeorder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":4,\r\n    \"qty\":2,\r\n    \"price\":500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/placeorder",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"placeorder"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-VzmKDeJWWxoIW+iHDi63XPB5Rjc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 21 Mar 2022 18:40:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Order Placed!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteorder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTM2QGdtYWlsLmNvbSIsImlkIjoiMGM0MWY2NmItY2E0YS00Yjk4LThlMDAtODU0NDcyN2RiY2M0IiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4MjMyNDYzLCJleHAiOjE2NDgzMTg4NjN9.1P0swSIDecJ2jBNVHrnlaCPpxEZMV5oFOJ3Cgz8ZXn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/deleteorder?oid=0e879250-eeb6-4596-bf43-c1105f7498a1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"deleteorder"
+							],
+							"query": [
+								{
+									"key": "oid",
+									"value": "0e879250-eeb6-4596-bf43-c1105f7498a1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteorder",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/deleteorder?oid=85f83df6-a7f9-4ee0-bea8-3294d90c856c",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"deleteorder"
+									],
+									"query": [
+										{
+											"key": "oid",
+											"value": "85f83df6-a7f9-4ee0-bea8-3294d90c856c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-IFDIaiBsTG8jKzw7JYzDwp28wKk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Mar 2022 19:31:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Order Deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getallorders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlkIjoiZjBhMjZmZTUtYTcyOS00Y2RlLThmZjctZDk2ZmU0MzlkMjJjIiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4MjI5Mjk4LCJleHAiOjE2NDgzMTU2OTh9.yqjAEAFNEaVDjdHUVHVRt5VknHpQyrFI4zNfqa6RL90",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/getallorders",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"getallorders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getallorders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/getallorders",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"getallorders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3712"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e80-XR/g+1z6xw2ECb1Vqi6HgnGtJ/g\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 18:34:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orders\": [\n        {\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"price\": 500,\n            \"category\": \"electronics\",\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"title\": \"Headset\",\n            \"id\": 1,\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"0c860e41-cc09-4f28-97d1-7fe63d60bdb9\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"price\": 300,\n            \"image\": \"https://images.unsplash.com/photo-1505751104546-4b63c93054b1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTcyfHxwcm9kdWN0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60\",\n            \"category\": \"Headphones\",\n            \"id\": 2,\n            \"description\": \"95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.\",\n            \"title\": \"Sony headset\",\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"483f668d-6d38-41ef-9cbd-42481c22eb8b\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"category\": \"men's clothing\",\n            \"description\": \"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.\",\n            \"title\": \"Water bottle\",\n            \"id\": 4,\n            \"price\": 500,\n            \"image\": \"https://images.unsplash.com/photo-1616740540792-3daec604777d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"confirmed\",\n            \"oid\": \"94ee72a7-b793-4aca-b35f-8c0df18f2151\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"price\": 500,\n            \"image\": \"https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80\",\n            \"id\": 1,\n            \"category\": \"electronics\",\n            \"title\": \"Headset\",\n            \"description\": \"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.\",\n            \"seller_email\": \"test123@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"0d0ad169-4502-442f-bd57-e0e26c086156\",\n            \"sid\": \"e40361ae-aab6-484e-8e50-4d0b9200cd7a\"\n        },\n        {\n            \"image\": \"https://images.unsplash.com/photo-1618329340733-ab4554d28b15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=903&q=80\",\n            \"title\": \"Yellow shoes\",\n            \"price\": 300,\n            \"description\": \"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.\",\n            \"category\": \"Shoes\",\n            \"id\": 3,\n            \"seller_email\": \"solankiravi536@gmail.com\",\n            \"qty\": 2,\n            \"status\": \"pending\",\n            \"oid\": \"0e879250-eeb6-4596-bf43-c1105f7498a1\",\n            \"sid\": \"0c41f66b-ca4a-4b98-8e00-8544727dbcc4\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "confirmorder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTM2QGdtYWlsLmNvbSIsImlkIjoiMGM0MWY2NmItY2E0YS00Yjk4LThlMDAtODU0NDcyN2RiY2M0IiwidHlwZSI6ImFkbWluIiwiaWF0IjoxNjQ4MjMyNDYzLCJleHAiOjE2NDgzMTg4NjN9.1P0swSIDecJ2jBNVHrnlaCPpxEZMV5oFOJ3Cgz8ZXn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/confirmorder?oid=0c860e41-cc09-4f28-97d1-7fe63d60bdb9",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"confirmorder"
+							],
+							"query": [
+								{
+									"key": "oid",
+									"value": "0c860e41-cc09-4f28-97d1-7fe63d60bdb9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "confirmorder",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/confirmorder?oid=94ee72a7-b793-4aca-b35f-8c0df18f2151",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"confirmorder"
+									],
+									"query": [
+										{
+											"key": "oid",
+											"value": "94ee72a7-b793-4aca-b35f-8c0df18f2151"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1f-e+GQxRE+LZ1mFk1Aow0VbVv8sqk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 06:06:57 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Order Confirmed!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteorderadmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvbGFua2lyYXZpNTMzQGdtYWlsLmNvbSIsImlhdCI6MTY0ODE4ODAyOSwiZXhwIjoxNjQ4Mjc0NDI5fQ.2RhyL879FKKl3k-itvEJP4o6sr6ZZXZaXsE7h_mn858",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://ecommr-api.herokuapp.com/deleteorder?oid=d3a9d1cb-ef13-4705-acdc-f8bf2a4f1bbd",
+							"protocol": "https",
+							"host": [
+								"ecommr-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"deleteorder"
+							],
+							"query": [
+								{
+									"key": "oid",
+									"value": "d3a9d1cb-ef13-4705-acdc-f8bf2a4f1bbd"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteorderadmin",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ecommr-api.herokuapp.com/deleteorder?oid=d3a9d1cb-ef13-4705-acdc-f8bf2a4f1bbd",
+									"protocol": "https",
+									"host": [
+										"ecommr-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"deleteorder"
+									],
+									"query": [
+										{
+											"key": "oid",
+											"value": "d3a9d1cb-ef13-4705-acdc-f8bf2a4f1bbd"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-IFDIaiBsTG8jKzw7JYzDwp28wKk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Mar 2022 06:46:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": \"Order Deleted!\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{siteurl}}",
+			"value": "https://ecommr-api.herokuapp.com/",
+			"type": "string"
+		}
+	]
+}
